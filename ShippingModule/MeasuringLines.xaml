@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="ShippingModule.MeasuringLines"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="300">
+    <Grid Background="Transparent">
+        <Canvas x:Name="drawingCanvas">
+            <Line X1="1" X2="1" Y1="0" Y2="30" Stroke="DarkGray" StrokeThickness="3" />
+            <Line X1="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}" X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}" Y1="0" Y2="30" Stroke="DarkGray" StrokeThickness="3"/>
+            <Line X1="0" X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}" Y1="15" Y2="15" Stroke="DarkGray" StrokeThickness="3"/>
+        </Canvas>
+        <Label x:Name="measurementLbl" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Content="100" Background="Transparent" />
+    </Grid>
+</UserControl>
